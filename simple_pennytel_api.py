@@ -64,9 +64,9 @@ class PennytelCon:
 		self._action_specific_xml = (
 			E.sendSMS (
 				E.id(self._username), E.password(self._password),
-				E.date(date),
 				E.type('0'), E.to(destination),
-				E.message(message)
+				E.message(message),
+				E.date(date)
 			)
 		)
 		return self._send_soap_request()
@@ -75,8 +75,8 @@ class PennytelCon:
 		self._action_specific_xml = (
 			E.triggerCallback (
 				E.id(self._username), E.password(self._password),
-				E.date(date),
-				E.leg1(leg1), E.leg2(leg2)
+				E.leg1(leg1), E.leg2(leg2),
+				E.date(date)
 			)
 		)
 		return self._send_soap_request()
